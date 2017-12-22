@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <!--<link rel="stylesheet" href="site.css">
+    <link rel="shortcut icon" href="img/iconee.ico">-->
+    <!--<script src="jquery-3.2.1.min.js"></script>-->
+
+    <title>AgroMercado | Nossos produtos</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+    <link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic,900,900italic' rel='stylesheet' type='text/css'>
+
+    <!-- Plugin CSS -->
+    <link href="vendor/magnific-popup/magnific-popup.css" rel="stylesheet">
+
+    <!-- Theme CSS -->
+    <link href="css/site.min.css" rel="stylesheet">
+
+    <!--FORMULÁRIO-->
+    <link href="mapa.css" rel="stylesheet">
+
+    <script src="jquery-3.2.1.min.js"></script>
+
+    <!--carregando o jqueryUI (JS)-->
+    <script src="jquery/jquery-ui.js"></script>
+    <script src="jQuery-ui_i18n.js"></script>
+    <!--carregando o jQueryUI (CSS) -->
+
+    <link rel="stylesheet" href="jquery/jquery-ui.css">
+    <link rel="stylesheet" href="jquery/jquery-ui.structure.css">
+    <link rel="stylesheet" href="jquery/jquery-ui.theme.css">
+
+    <!--FIM FORMULÁRIO-->
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+
+<!--STYLE DO MAPA-->
+    <style>
+      /* Always set the map height explicitly to define the size of the div
+       * element that contains the map. */
+      #map {
+        height: 100%;
+        width: 84%;
+        float: right;
+      }
+      /* Optional: Makes the sample page fill the window. */
+      html, body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+      }
+    </style>
+<!--FIM DO STYLE DO MAPA-->
+<!--SCRIPT DO MAPA-->
+<script>
+        
+    </script>
+<!--FIM DO SCRIPT DO MAPA-->
+</head>
+
+<body id="page-top">
+
+    <nav id="mainNav" class="navbar navbar-default navbar-fixed-top">
+        <div class="container-fluid" style="background-color:#8dbf41; ">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span> Menu <i class="fa fa-bars"></i>
+                </button>
+                <a class="navbar-brand page-scroll" href="#page-top" style="color:white;">AgroMercado</a>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a class="page-scroll" href="index.html" style="color:white;">Capa</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="pag.html" style="color:white;">Quem somos</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="pag3.html" style="color:white;">Nossos produtores</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="#contact" style="color:white;">Contato</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="contato.html" style="color:white;">Entrar</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container-fluid -->
+    </nav>
+<!--FORMULÁRIO-->
+    <section>
+                                
+        <form>
+            <label>Produtos:</label><br />
+            <input type="text" name="produtos" id="produtos" /> <br /><br />
+            <label>Produtor:</label><br />
+            <input type="text" name="produtor" id="produtor" /> <br /><br />
+            <label>Estado:</label><br />
+            <input type="text" name="cidade" id="cidade" /> <br /> <br />
+            <label>Cidade:</label><br />
+            <input type="text" name="cidade" id="cidade" /> <br /> <br />
+            <input class="btn btn-primary btn-xl page-scroll" type="submit" value="Pesquisar">
+        </form>
+
+    </section>
+<!--FIM DO FORMULÁRIO-->
+<!--SCRIPT DO FORMULÁRIO-->
+    <script>
+            $( "#produtos" ).autocomplete({
+                source: produtos,
+                minLength: 3
+            });
+            $( "#produtor" ).autocomplete({
+                source: produtor,
+                minLength: 3
+            });
+
+            $( "#cidade" ).autocomplete({
+                source: cidade,
+                minLength: 3
+            });
+        </script>
+<!--FIM DO SCRIPT DO FORMULÁRIO-->
+<!--MAPA-->
+
+<div id="map"></div>
+    <script>
+
+      // The following example creates complex markers to indicate beaches near
+      // Sydney, NSW, Australia. Note that the anchor is set to (0,32) to correspond
+      // to the base of the flagpole.
+
+      function initMap() {
+        var map = new google.maps.Map(document.getElementById('map'), {
+          zoom: 15,
+          center: {lat: -6.2588691, lng: -36.5259705}
+        });
+
+        setMarkers(map);
+      }
+
+      // Data for the markers consisting of a name, a LatLng and a zIndex for the
+      // order in which these markers should display on top of each other.
+      var beaches = [
+        ['IFRN', -6.2530397,-36.5361182, 1],
+        ['Prefeitura', -6.26083333333,-36.5177777778, 2],
+        //['Cronulla Beach', -34.028249, 151.157507, 3],
+        //['Manly Beach', -33.80010128657071, 151.28747820854187, 2],
+        //['Maroubra Beach', -33.950198, 151.259302, 1]
+      ];
+
+      function setMarkers(map) {
+        // Adds markers to the map.
+
+        // Marker sizes are expressed as a Size of X,Y where the origin of the image
+        // (0,0) is located in the top left of the image.
+
+        // Origins, anchor positions and coordinates of the marker increase in the X
+        // direction to the right and in the Y direction down.
+        var image = {
+          url: 'marcador.png',
+          // This marker is 20 pixels wide by 32 pixels high.
+          size: new google.maps.Size(20, 32),
+          // The origin for this image is (0, 0).
+          origin: new google.maps.Point(0, 0),
+          // The anchor for this image is the base of the flagpole at (0, 32).
+          anchor: new google.maps.Point(0, 32)
+        };
+        // Shapes define the clickable region of the icon. The type defines an HTML
+        // <area> element 'poly' which traces out a polygon as a series of X,Y points.
+        // The final coordinate closes the poly by connecting to the first coordinate.
+        var shape = {
+          coords: [1, 1, 1, 20, 18, 20, 18, 1],
+          type: 'poly'
+        };
+        for (var i = 0; i < beaches.length; i++) {
+          var beach = beaches[i];
+          var marker = new google.maps.Marker({
+            position: {lat: beach[1], lng: beach[2]},
+            map: map,
+            icon: image,
+            shape: shape,
+            title: beach[0],
+            zIndex: beach[3],
+
+            
+           
+          });
+        }
+      }
+    </script>
+    <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDVQeyR68swH-QiAqCVnqXRXKgcv7z6FMM&callback=initMap">
+    </script>
+<!--FIM DO MAPA-->
+
+    <!-- jQuery -->
+    <script src="vendor/jquery/jquery.min.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+
+    <!-- Plugin JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
+    <script src="vendor/scrollreveal/scrollreveal.min.js"></script>
+    <script src="vendor/magnific-popup/jquery.magnific-popup.min.js"></script>
+
+    <!-- Theme JavaScript -->
+    <script src="js/creative.min.js"></script>
+</body>
+</html>

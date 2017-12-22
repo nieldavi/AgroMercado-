@@ -1,0 +1,3 @@
+@media{max-width:414px}
+
+próxima atividade: desenvolver o protótipo da tela produtos com mapa e os campos de filtros; versão 0 do banco de dados do proeto

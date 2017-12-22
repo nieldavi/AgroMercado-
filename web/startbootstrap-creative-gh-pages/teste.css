@@ -1,0 +1,49 @@
+.form{
+	margin: auto;
+	height: auto;
+	width: fit-content;
+}
+.input{
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+	border-radius: 5px;
+	box-sizing: border-box;
+	border: 1px solid #ccc;
+	width: 100%;
+}
+.data{
+	width: auto;
+}
+.label{
+	font-size: 50px;
+	text-transform: uppercase;
+    font-weight: 700;
+   	font-family: 'Open Sans','Helvetica Neue',Arial,sans-serif;
+   	text-align: center;
+
+}
+.select{
+	width: 100%;
+    padding: 16px 20px;
+    border: none;
+    border-radius: 4px;
+    background-color: white;
+    border-radius: 5px;
+	box-sizing: border-box;
+	border: 1px solid #ccc;
+}
+.button{
+	background-color: #4CAF50;
+    border: none;
+    color: white;
+    padding: 16px 32px;
+    text-decoration: none;
+    margin: 4px 2px;
+    cursor: pointer;
+
+}
+
